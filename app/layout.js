@@ -4,6 +4,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Sidebar from "@/components/Sidebar";
 import { Box } from "@mui/material";
+import Container from "@/components/Container";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,13 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Box sx={{ display: "flex" }}>
-          <Sidebar />
-          <Box sx={{ ml: { md: "260px", xs: "65px" }, flex: 1 }}>
-            <Navbar />
-          </Box>
-        </Box>
-        <Box sx={{ ml: { md: "260px", xs: "65px" } }}>{children}</Box>
+        <Container children={children} />
       </body>
     </html>
   );
